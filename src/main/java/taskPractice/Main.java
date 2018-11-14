@@ -19,6 +19,8 @@ public class Main extends Application {
         Parent root = loader.load();
         primaryStage.setTitle("Task Manager");
         primaryStage.setScene(new Scene(root, 400, 600));
+        primaryStage.setMinHeight(650);
+        primaryStage.setMinWidth(420);
         primaryStage.show();
     }
 

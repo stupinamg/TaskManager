@@ -5,12 +5,12 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskPractice.controllers.TaskController">
+<AnchorPane fx:id="taskContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="400.0" styleClass="task-container" stylesheets="@styles/JMetro.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="taskPractice.controllers.TaskController">
    <children>
-      <Label fx:id="taskHeader" layoutX="14.0" layoutY="14.0" text="Task name" />
+      <Label fx:id="taskHeader" layoutX="14.0" layoutY="14.0" styleClass="item-title" text="Task name" />
       <Label layoutX="14.0" layoutY="49.0" text="Status:" />
       <Label fx:id="status" layoutX="64.0" layoutY="49.0" text="active" />
-      <Button layoutX="298.0" layoutY="27.0" mnemonicParsing="false" onAction="#deleteTask" text="Delete task" />
-      <CheckBox fx:id="completedCheckbox" layoutX="187.0" layoutY="31.0" mnemonicParsing="false" text="Completed" />
+      <Button layoutX="263.0" layoutY="28.0" mnemonicParsing="false" onAction="#deleteTask" text="Delete task" AnchorPane.rightAnchor="14.5" />
+      <CheckBox fx:id="completedCheckbox" layoutX="154.0" layoutY="32.0" mnemonicParsing="false" text="Completed" AnchorPane.rightAnchor="153.0" />
    </children>
 </AnchorPane>

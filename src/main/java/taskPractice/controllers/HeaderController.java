@@ -17,6 +17,7 @@ public class HeaderController {
     @FXML
     void addTask(ActionEvent event) {
         mainController.addTask(new TaskItem(taskNameInput.getText()));
+        taskNameInput.clear();
     }
     @Autowired
     public void setMainController(MainController mainController) {

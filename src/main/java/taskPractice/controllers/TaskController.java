@@ -1,9 +1,11 @@
 package taskPractice.controllers;
 
+import javafx.css.PseudoClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -15,6 +17,9 @@ public class TaskController {
     MainController mainController;
 
     private TaskItem taskItem;
+
+    @FXML
+    private AnchorPane taskContainer;
 
     @FXML
     private Label taskHeader;
@@ -35,8 +40,13 @@ public class TaskController {
         taskHeader.setText(task.getName());
         completedCheckbox.selectedProperty().bindBidirectional(taskItem.completedProperty()); // изменение состояния checkbox
         taskItem.completedProperty().addListener((observable, oldValue, newValue) -> {
-            if(newValue) status.setText("completed");
-            else status.setText("active");
+            if(newValue) {
+                status.setText("completed");
+                taskContainer.pseudoClassStateChanged(PseudoClass.getPseudoClass("completed"), true);
+            }else {
+                status.setText("active");
+                taskContainer.pseudoClassStateChanged(PseudoClass.getPseudoClass("completed"), false);
+            }
         });
     }
 
